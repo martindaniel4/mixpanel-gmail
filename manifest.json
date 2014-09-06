@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "MixpanelGmail",
+  "description": "Gmail integration of mixpanel people data",
+  "version": "1.0",
+  
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["jquery-2.1.1.min.js", "myscript.js","gmail.js"]
+    }
+  ]
+}
