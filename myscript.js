@@ -17,7 +17,7 @@ setInterval(function(){
 }, POLL_INTERVAL);
 
 
-// Insert widget in Gmail
+// Insert widget in sidebar of Gmail
 
 function injectProfileWidget(){
 
@@ -26,9 +26,11 @@ function injectProfileWidget(){
 
   waitForElement(exp, function(el) {
 
-    //addCustomSidebarElement(el);
-  
-  	exp.on("mouseover",function() {console.log("mixpanel-gmail hovered on : "+email_exp);})
+  	exp.on("mouseover",function() {
+
+  		addElementSidebar(email_exp);
+
+  	})
 
 
   });
@@ -49,6 +51,16 @@ function waitForElement(selector, callback) {
       callback(el);
 
     }
- 
-  }, POLL_INTERVAL);
+
+   }, POLL_INTERVAL);
+}
+
+function addElementSidebar(element) {
+
+	if (!$(".mixpanel-gmail-bar")[0]) {
+
+	$("[role=complementary].nH").append("<div class='mixpanel-gmail-bar'>"+"ce bon vieux : "+element+"</div>");
+
+	}
+
 }

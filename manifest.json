@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*"],
-      "js": ["jquery-2.1.1.min.js", "myscript.js","gmail.js"]
+      "js": ["jquery-2.1.1.min.js", "myscript.js","gmail.js","md5.js"]
     }
   ]
 }
