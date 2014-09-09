@@ -21,3 +21,25 @@ $.getJSON('http://mixpanel.com/api/2.0/engage/?callback=?', {
             console.log(result);
         });
 });
+
+
+// HTTP request to mixpanel URL
+
+function callMixpanelAPI(callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function(data) {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        var data = JSON.parse(xhr.responseText);
+        callback(data);
+      } else {
+        callback(null);
+      }
+    }
+  }
+  // Note that any URL fetched here must be matched by a permission in
+  // the manifest.json file!
+  var url = 'https://api.twitter.com/1/trends/daily.json?exclude=hashtags';
+  xhr.open('GET', url, true);
+  xhr.send();
+};

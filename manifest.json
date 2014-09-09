@@ -4,6 +4,9 @@
   "name": "MixpanelGmail",
   "description": "Gmail integration of mixpanel people data",
   "version": "1.0",
+    "permissions": [
+    "http://mixpanel.com/*"
+  ],
   
   "content_scripts": [
     {
